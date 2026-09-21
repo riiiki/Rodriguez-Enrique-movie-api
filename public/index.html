@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Personal archive / 01</p>
+        <h1>Movie<br><span>Collection</span></h1>
+      </div>
+      <p class="intro">A clean little shelf for the films worth remembering.</p>
+    </header>
+
+    <section class="content-grid">
+      <section class="panel add-panel" aria-labelledby="add-heading">
+        <div class="panel-heading">
+          <span class="section-number">01</span>
+          <h2 id="add-heading">Add a movie</h2>
+        </div>
+        <form id="movie-form">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" placeholder="Taken" required>
+
+          <label for="genre">Genre</label>
+          <input id="genre" name="genre" type="text" placeholder="Action" required>
+
+          <label for="year">Release year</label>
+          <input id="year" name="year" type="number" min="1888" max="2100" placeholder="2024" required>
+
+          <button type="submit">Add to collection <span aria-hidden="true">↗</span></button>
+          <p id="form-message" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel library-panel" aria-labelledby="library-heading">
+        <div class="library-topline">
+          <div class="panel-heading">
+            <span class="section-number">02</span>
+            <h2 id="library-heading">Your library</h2>
+          </div>
+          <button id="reload-button" class="text-button" type="button">Refresh <span aria-hidden="true">↻</span></button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Title</th><th>Genre</th><th>Year</th></tr>
+            </thead>
+            <tbody id="movie-list"></tbody>
+          </table>
+          <p id="empty-state" class="empty-state" hidden>No movies yet. Add the first one.</p>
+        </div>
+        <p id="load-message" class="message" role="status"></p>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
