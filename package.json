@@ -1,0 +1,15 @@
+{
+  "name": "movie-collection-api",
+  "version": "1.0.0",
+  "description": "A simple Movie Collection REST API built with Node.js and Express.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["node", "express", "rest-api", "movies"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
