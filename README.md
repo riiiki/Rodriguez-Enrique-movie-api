@@ -1,18 +1,31 @@
 # Movie Collection API
 
-A small REST API and browser client built with Node.js and Express. Movies are kept in memory, so new records reset when the server restarts.
+Create a simple Movie Collection REST API using Node.js + Express.
 
-## Run locally
+Requirements
+Use a JavaScript array as temporary data storage.
 
-```bash
-npm install
-npm start
-```
+Create:
 
-Open http://localhost:3000.
+GET /api/movies — retrieve all movies
 
-## API
+GET /api/movies/:id — retrieve one movie
 
-- `GET /api/movies` returns all movies.
-- `GET /api/movies/:id` returns one movie.
-- `POST /api/movies` creates a movie from `{ "title": "...", "genre": "...", "year": 2024 }`.
+POST /api/movies — add a new movie
+
+Each movie must have: id, title, genre, year
+
+Automatically assign the id for new movies.
+
+Return an error if required fields are missing.
+
+Frontend
+Create index.html that:
+
+displays the movie list
+
+has a form for adding a movie
+
+uses fetch() to communicate with the API
+
+refreshes the list after adding a movie
